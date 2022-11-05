@@ -1,4 +1,5 @@
 import os
+from time import sleep
 import requests
 import telegram
 from dotenv import load_dotenv
@@ -46,3 +47,4 @@ if __name__ == '__main__':
             pass
         except requests.exceptions.ConnectionError:
             print('ConnectionError')
+            sleep(5)
