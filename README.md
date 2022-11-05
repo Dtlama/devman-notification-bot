@@ -13,8 +13,8 @@
 ```
 
 TG_TOKEN=токен Вашего бота в телеграм
-TOKEN=Ваш токен dvmn
-CHAT_ID=Ваш id телеграмм
+DEVMAN_TOKEN=Ваш токен dvmn
+TG_CHAT_ID=Ваш id телеграмм
 ```
 
 [Python3](https://www.python.org/downloads/) должен быть уже установлен.

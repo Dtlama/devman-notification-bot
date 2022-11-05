@@ -8,9 +8,9 @@ from dotenv import load_dotenv
 if __name__ == '__main__':
     load_dotenv()
 
-    devman_token = os.environ['TOKEN']
+    devman_token = os.environ['DEVMAN_TOKEN']
     tg_token = os.environ['TG_TOKEN']
-    tg_chat_id = os.environ['CHAT_ID']
+    tg_chat_id = os.environ['TG_CHAT_ID']
 
     timestamp = None
 
