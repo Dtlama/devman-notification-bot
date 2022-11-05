@@ -43,6 +43,6 @@ if __name__ == '__main__':
                     status = "К сожалению, в работе нашлись ошибки."
                 message = message.format(lesson_title=lesson_title, status=status, lesson_url=lesson_url)
         except requests.exceptions.ReadTimeout:
-            print('ReadTimeout')
+            pass
         except requests.exceptions.ConnectionError:
             print('ConnectionError')
