@@ -30,15 +30,15 @@ if __name__ == '__main__':
             payload = {"timestamp": timestamp}
             response = requests.get(url, headers=headers, params=payload)
             response.raise_for_status()
-            timestamp = response.json().get("last_attempt_timestamp")
+            response_payload = response.json()
+            timestamp = response_payload.get("last_attempt_timestamp")
             if not timestamp:
-                timestamp = response.json().get("timestamp_to_request")
-            print(response.json())
+                timestamp = response_payload.get("timestamp_to_request")
 
-            if response.json().get("status") == "found":
-                lesson_title = response.json()["new_attempts"][0]["lesson_title"]
-                lesson_url = response.json()["new_attempts"][0]["lesson_url"]
-                if response.json().get("is_negative"):
+            if response_payload.get("status") == "found":
+                lesson_title = response_payload["new_attempts"][0]["lesson_title"]
+                lesson_url = response_payload["new_attempts"][0]["lesson_url"]
+                if response_payload.get("is_negative"):
                     status = "Преподавателю всё понравилось, можно приступать к следующему уроку!"
                 else:
                     status = "К сожалению, в работе нашлись ошибки."
